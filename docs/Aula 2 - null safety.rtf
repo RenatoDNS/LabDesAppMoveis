@@ -1,0 +1,223 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\froman\fcharset0 Times-Roman;\f2\fmodern\fcharset0 Courier;
+\f3\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red109\green109\blue109;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c50196\c50196\c50196;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat2\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid101\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\margl1701\margr1701\margb1417\margt1417\vieww22660\viewh20980\viewkind1\viewscale150
+\deftab720
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b\fs24 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Introdu\'e7\'e3o ao Null Safety no Flutter
+\f1\b0 \
+O padr\'e3o 
+\f0\b Null Safety
+\f1\b0  foi introduzido no Dart a partir da vers\'e3o 2.12 com o objetivo de melhorar a seguran\'e7a e estabilidade dos aplicativos desenvolvidos com a linguagem. Esse recurso impede que vari\'e1veis assumam valores nulos por padr\'e3o, evitando erros comuns durante a execu\'e7\'e3o do programa.\
+Antes da introdu\'e7\'e3o do Null Safety, um dos problemas mais frequentes em linguagens de programa\'e7\'e3o era o acesso a vari\'e1veis nulas, que resultava em exce\'e7\'f5es inesperadas e falhas em tempo de execu\'e7\'e3o. Com essa nova abordagem, Dart obriga os desenvolvedores a explicitamente indicar quando uma vari\'e1vel pode receber um valor nulo, tornando o c\'f3digo mais confi\'e1vel e reduzindo a necessidade de verifica\'e7\'e3o de nulidade. Linguagens como Swift e Kotlin j\'e1 utilizam esse conceito, garantindo mais robustez e confiabilidade aos sistemas.\
+A seguir, apresentaremos um tutorial com exemplos pr\'e1ticos para entender como funciona o Null Safety no Dart e como utiliz\'e1-lo corretamente.\
+\pard\pardeftab720\partightenfactor0
+\cf3 \strokec3 \
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 \strokec2 Tutorial: Utilizando Null Safety no Dart\
+\pard\pardeftab720\sa319\partightenfactor0
+
+\fs24 \cf0 1. Declara\'e7\'e3o de vari\'e1veis e Null Safety\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0 \cf0 No Dart, ao declarar uma vari\'e1vel sem inicializ\'e1-la, o compilador impede seu uso antes da atribui\'e7\'e3o de um valor.\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 void main() \{\
+  int numero;\
+  print(numero);\
+\}\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 O c\'f3digo acima gerar\'e1 um erro, pois a vari\'e1vel 
+\f2\fs26 numero
+\f1\fs24  n\'e3o foi inicializada. Para corrigir isso, podemos:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Inicializar a vari\'e1vel com um valor padr\'e3o:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 void main() \{\
+  int numero = 10;\
+  print(numero);\
+\}\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0
+\f1\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Permitir que a vari\'e1vel aceite valores 
+\f2\fs26 null
+\f1\fs24 , utilizando o operador 
+\f2\fs26 ?
+\f1\fs24 :\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 void main() \{\
+  int? numero;\
+  print(numero); // Sa\'edda: null\
+\}\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 Por\'e9m, ao tentar utilizar essa vari\'e1vel sem garantir que ela possui um valor, podemos ter problemas:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 void main() \{\
+  int? numero;\
+  int resposta = numero; // Erro: numero pode ser null\
+\}\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 A solu\'e7\'e3o \'e9 garantir que 
+\f2\fs26 numero
+\f1\fs24  tenha um valor antes de utiliz\'e1-la.\
+\pard\pardeftab720\sa319\partightenfactor0
+
+\f0\b \cf0 2. Uso do operador 
+\f3\fs26 late
+\f0\fs24 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0 \cf0 Quando uma vari\'e1vel ser\'e1 inicializada posteriormente e n\'f3s garantimos que ela nunca ser\'e1 
+\f2\fs26 null
+\f1\fs24 , podemos utilizar 
+\f2\fs26 late
+\f1\fs24 .\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 class Funcionario \{\
+  late int numero;\
+  \
+  Funcionario() \{\
+    numero = calcular();\
+  \}\
+  \
+  int calcular() \{\
+    return 10;\
+  \}\
+\}\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 Com isso, evitamos o erro de vari\'e1vel n\'e3o inicializada e mantemos a seguran\'e7a do Null Safety.\
+\pard\pardeftab720\sa319\partightenfactor0
+
+\f0\b \cf0 3. Operador 
+\f3\fs26 !
+\f0\fs24  (Non-null assertion operator)\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0 \cf0 Caso estejamos certos de que uma vari\'e1vel n\'e3o ser\'e1 
+\f2\fs26 null
+\f1\fs24 , podemos usar 
+\f2\fs26 !
+\f1\fs24  para for\'e7ar o acesso ao seu valor:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 void main() \{\
+  int? numero = 10;\
+  int resposta = numero!; // Garantindo que numero n\'e3o \'e9 null\
+  print(resposta);\
+\}\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 Se 
+\f2\fs26 numero
+\f1\fs24  for 
+\f2\fs26 null
+\f1\fs24 , o uso de 
+\f2\fs26 !
+\f1\fs24  resultar\'e1 em um erro em tempo de execu\'e7\'e3o.\
+\pard\pardeftab720\sa319\partightenfactor0
+
+\f0\b \cf0 4. Uso do operador 
+\f3\fs26 ??
+\f0\fs24  para valores padr\'e3o\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0 \cf0 Se quisermos garantir que uma vari\'e1vel n\'e3o receba um valor 
+\f2\fs26 null
+\f1\fs24 , podemos usar 
+\f2\fs26 ??
+\f1\fs24  para definir um valor padr\'e3o:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 void main() \{\
+  String? nome;\
+  String resposta = nome ?? "Nome padr\'e3o";\
+  print(resposta);\
+\}\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 Caso 
+\f2\fs26 nome
+\f1\fs24  seja 
+\f2\fs26 null
+\f1\fs24 , 
+\f2\fs26 resposta
+\f1\fs24  receber\'e1 "Nome padr\'e3o".\
+\pard\pardeftab720\sa319\partightenfactor0
+
+\f0\b \cf0 5. Null Safety em listas\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0 \cf0 Podemos aplicar Null Safety tamb\'e9m em estruturas como listas:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 void main() \{\
+  List<String?> lista = ["Gol", null, "Ka"];\
+  print(lista);\
+\}\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 Neste caso, a lista aceita elementos 
+\f2\fs26 null
+\f1\fs24 , mas se quisermos evitar isso, podemos definir o tipo como 
+\f2\fs26 List<String>
+\f1\fs24 :\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 void main() \{\
+  List<String> lista = ["Gol", "Fusca", "Ka"];\
+  print(lista);\
+\}\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 Se a pr\'f3pria lista puder ser 
+\f2\fs26 null
+\f1\fs24 , podemos fazer:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 List<String>? lista;\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 Isso significa que 
+\f2\fs26 lista
+\f1\fs24  pode ser 
+\f2\fs26 null
+\f1\fs24 , mas seus elementos n\'e3o.\
+\pard\pardeftab720\partightenfactor0
+\cf3 \strokec3 \
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 \strokec2 Conclus\'e3o\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 O Null Safety \'e9 um recurso essencial para garantir maior seguran\'e7a e estabilidade aos aplicativos desenvolvidos em Flutter. Ao impedir acessos inesperados a valores 
+\f2\fs26 null
+\f1\fs24 , ele reduz erros comuns em tempo de execu\'e7\'e3o, melhora a performance da compila\'e7\'e3o e torna o c\'f3digo mais robusto.\
+Dominar os conceitos do Null Safety e os operadores relacionados, como 
+\f2\fs26 ?
+\f1\fs24 , 
+\f2\fs26 !
+\f1\fs24 , 
+\f2\fs26 ??
+\f1\fs24  e 
+\f2\fs26 late
+\f1\fs24 , \'e9 fundamental para escrever c\'f3digo seguro e eficiente. Com essa abordagem, o desenvolvimento se torna mais previs\'edvel e confi\'e1vel, proporcionando uma melhor experi\'eancia tanto para os desenvolvedores quanto para os usu\'e1rios finais dos aplicativos Flutter.\
+}

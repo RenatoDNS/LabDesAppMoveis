@@ -1,0 +1,257 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\froman\fcharset0 Times-Roman;\f2\fmodern\fcharset0 Courier;
+\f3\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\vieww12000\viewh15840\viewkind0
+\deftab720
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b\fs24 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Tutorial: Trabalhando com Gestos no Flutter
+\f1\b0 \
+Hoje vamos explorar os gestos no Flutter. Vamos aprender quais gestos o Flutter suporta por meio da constru\'e7\'e3o de um pequeno jogo de "Cara ou Coroa".\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 Criando a Aplica\'e7\'e3o\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Para iniciar, crie um novo projeto Flutter.\
+No arquivo 
+\f2\fs26 main.dart
+\f1\fs24 , escreva a seguinte estrutura:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 import 'package:flutter/material.dart';\
+import 'Jogo.dart';\
+\
+void main() \{\
+  runApp(MaterialApp(\
+    home: Jogo(),\
+    debugShowCheckedModeBanner: false,\
+  ));\
+\}\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 A instru\'e7\'e3o 
+\f2\fs26 debugShowCheckedModeBanner
+\f1\fs24  \'e9 utilizada para remover a faixa vermelha de debug no aplicativo.\
+O c\'f3digo apresentar\'e1 erro na importa\'e7\'e3o e na fun\'e7\'e3o 
+\f2\fs26 Jogo()
+\f1\fs24 , pois ainda n\'e3o foram criados. Vamos cri\'e1-los.\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 Criando a Classe 
+\f3\fs30\fsmilli15210 Jogo
+\f0\fs28 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Crie um novo arquivo chamado 
+\f2\fs26 Jogo.dart
+\f1\fs24  e adicione o seguinte c\'f3digo:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 import 'package:flutter/material.dart';\
+import 'dart:math';\
+\
+class Jogo extends StatefulWidget \{\
+  @override\
+  _JogoState createState() => _JogoState();\
+\}\
+\
+class _JogoState extends State<Jogo> \{\
+  @override\
+  Widget build(BuildContext context) \{\
+    return Scaffold(\
+      appBar: AppBar(\
+        title: Text("Cara ou Coroa"),\
+      ),\
+      body: Column(\
+        crossAxisAlignment: CrossAxisAlignment.center,\
+        children: <Widget>[\
+          Padding(\
+            padding: EdgeInsets.only(top: 32, bottom: 16),\
+            child: Text(\
+              "Escolha do Computador",\
+              textAlign: TextAlign.center,\
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),\
+            ),\
+          ),\
+          Image.asset("imagens/opcao.png", height: 100),\
+          Padding(\
+            padding: EdgeInsets.only(top: 32, bottom: 16),\
+            child: Text(\
+              "Escolha a sua op\'e7\'e3o",\
+              textAlign: TextAlign.center,\
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),\
+            ),\
+          ),\
+          Row(\
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,\
+            children: <Widget>[\
+              Image.asset("imagens/cara260.png", height: 100),\
+              Image.asset("imagens/coroa260.png", height: 100),\
+            ],\
+          )\
+        ],\
+      ),\
+    );\
+  \}\
+\}\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 Teste a aplica\'e7\'e3o para verificar se tudo est\'e1 funcionando corretamente.\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 Detectando Gestos\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 O Flutter possui um widget chamado 
+\f2\fs26 GestureDetector
+\f1\fs24 , que permite a detec\'e7\'e3o de gestos em elementos como textos e imagens. Para tornar um objeto interativo, basta envolv\'ea-lo com 
+\f2\fs26 GestureDetector
+\f1\fs24 .\
+Exemplo de c\'f3digo:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 GestureDetector(\
+  onTap: () \{ print("Escolheu cara"); \},\
+  child: Image.asset("imagens/cara260.png", height: 100),\
+)\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 Tamb\'e9m podemos adicionar mais eventos, como 
+\f2\fs26 onDoubleTap
+\f1\fs24  e 
+\f2\fs26 onLongPress
+\f1\fs24 :\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 GestureDetector(\
+  onTap: () \{ print("Escolheu cara"); \},\
+  onDoubleTap: () \{ print("Clicou duas vezes na imagem"); \},\
+  onLongPress: () \{ print("Pressionou e segurou sobre a imagem"); \},\
+  child: Image.asset("imagens/cara260.png", height: 100),\
+)\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 Agora, vamos aplicar essa l\'f3gica ao nosso jogo.\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 Modificando a Escolha do Usu\'e1rio\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Atualize o c\'f3digo para envolver as imagens com 
+\f2\fs26 GestureDetector
+\f1\fs24  e chamar a fun\'e7\'e3o 
+\f2\fs26 _opcaoSelecionada
+\f1\fs24 :\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 Row(\
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,\
+  children: <Widget>[\
+    GestureDetector(\
+      onTap: () => _opcaoSelecionada("cara"),\
+      child: Image.asset("imagens/cara260.png", height: 100),\
+    ),\
+    GestureDetector(\
+      onTap: () => _opcaoSelecionada("coroa"),\
+      child: Image.asset("imagens/coroa260.png", height: 100),\
+    ),\
+  ],\
+)\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 Se ocorrer um erro na fun\'e7\'e3o 
+\f2\fs26 _opcaoSelecionada
+\f1\fs24 , significa que ainda n\'e3o foi criada. Vamos implement\'e1-la.\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 Criando a Fun\'e7\'e3o 
+\f3\fs30\fsmilli15210 _opcaoSelecionada
+\f0\fs28 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Adicione a seguinte fun\'e7\'e3o na classe 
+\f2\fs26 _JogoState
+\f1\fs24 :\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 class _JogoState extends State<Jogo> \{\
+  var _imagemApp = AssetImage("imagens/opcao.png");\
+  var _mensagem = "Escolha uma op\'e7\'e3o abaixo";\
+\
+  void _opcaoSelecionada(String escolhaUsuario) \{\
+    var opcoes = ["cara", "coroa"];\
+    var numero = Random().nextInt(2);\
+    var escolhaApp = opcoes[numero];\
+\
+    setState(() \{\
+      _imagemApp = AssetImage("imagens/$\{escolhaApp\}260.png");\
+      _mensagem = (escolhaUsuario == escolhaApp)\
+          ? "Parab\'e9ns!!! Voc\'ea ganhou :)"\
+          : "Voc\'ea perdeu :(";\
+    \});\
+  \}\
+\
+  @override\
+  Widget build(BuildContext context) \{\
+    return Scaffold(\
+      appBar: AppBar(\
+        title: Text("Cara ou Coroa"),\
+      ),\
+      body: Column(\
+        crossAxisAlignment: CrossAxisAlignment.center,\
+        children: <Widget>[\
+          Padding(\
+            padding: EdgeInsets.only(top: 32, bottom: 16),\
+            child: Text(\
+              "Escolha do Computador",\
+              textAlign: TextAlign.center,\
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),\
+            ),\
+          ),\
+          Image(image: _imagemApp, height: 100),\
+          Padding(\
+            padding: EdgeInsets.only(top: 32, bottom: 16),\
+            child: Text(\
+              _mensagem,\
+              textAlign: TextAlign.center,\
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),\
+            ),\
+          ),\
+        ],\
+      ),\
+    );\
+  \}\
+\}\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 Finalizando e Testando\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Agora, troque na estrutura do aplicativo as mensagens fixas pelas vari\'e1veis criadas:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 Padding(\
+  padding: EdgeInsets.only(top: 32, bottom: 16),\
+  child: Text(\
+    "Escolha do Computador",\
+    textAlign: TextAlign.center,\
+    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),\
+  ),\
+),\
+Image(image: _imagemApp, height: 100),\
+Padding(\
+  padding: EdgeInsets.only(top: 32, bottom: 16),\
+  child: Text(\
+    _mensagem,\
+    textAlign: TextAlign.center,\
+    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),\
+  ),\
+),\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 Teste sua aplica\'e7\'e3o! Como alteramos vari\'e1veis e estruturas, pare a execu\'e7\'e3o do debug e inicie novamente para garantir que tudo esteja funcionando corretamente.\
+}

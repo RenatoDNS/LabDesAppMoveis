@@ -1,0 +1,300 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\froman\fcharset0 Times-Roman;\f2\fmodern\fcharset0 Courier;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red109\green109\blue109;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c50196\c50196\c50196;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid101\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\paperw11900\paperh16840\vieww30800\viewh21660\viewkind0
+\deftab720
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Tutorial de Flutter - Aula 1\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\fs28 \cf0 Introdu\'e7\'e3o\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Todo aplicativo no Flutter \'e9 criado via c\'f3digo digitado. Para criar seu app, abra o terminal e navegue at\'e9 a pasta onde deseja criar o projeto. Digite o seguinte comando:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 flutter create nome_projeto\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f0\b\fs24 \cf0 Observa\'e7\'e3o:
+\f1\b0  No nome do projeto, n\'e3o utilize caracteres especiais ou espa\'e7os.\
+Exemplo:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 $ flutter create primeiro_app\
+$ cd primeiro_app\
+$ flutter run\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 Configura\'e7\'e3o do Ambiente\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\f1\b0\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Abra o projeto no Android Studio.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Na pasta 
+\f2\fs26 lib
+\f1\fs24 , abra o arquivo 
+\f2\fs26 main.dart
+\f1\fs24 .\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Lembre aos alunos que todo c\'f3digo no Flutter \'e9 digitado manualmente. A IDE auxilia com auto-complete, emuladores e depura\'e7\'e3o, mas a codifica\'e7\'e3o pode ser feita em qualquer editor, como VSCode, Android Studio ou at\'e9 mesmo o Bloco de Notas.\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 Conceito de Widgets\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 No Flutter, tudo s\'e3o 
+\f0\b Widgets
+\f1\b0  (bot\'f5es, textos, pain\'e9is, imagens, etc.). Passe pelo c\'f3digo j\'e1 criado na aplica\'e7\'e3o de exemplo e destaque as 
+\f0\b extens\'f5es dos objetos criados
+\f1\b0 .\
+Todo 
+\f0\b widget
+\f1\b0  \'e9 um 
+\f0\b objeto
+\f1\b0 , sendo criado por interm\'e9dio de classes.\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 Criando o Primeiro C\'f3digo no Flutter\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0
+\f1\b0\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Apague todo o conte\'fado do arquivo 
+\f2\fs26 main.dart
+\f1\fs24 .\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Come\'e7aremos um c\'f3digo do zero para entender e construir tudo do in\'edcio.\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Importe o pacote 
+\f0\b Material
+\f1\b0 : 
+\f2\fs26 import 'package:flutter/material.dart';\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \uc0\u8232 
+\f1\fs24 O pacote 
+\f0\b Material
+\f1\b0  cont\'e9m o Material Design a ser aplicado na interface.\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	5	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Crie o m\'e9todo 
+\f2\fs26 main
+\f1\fs24  para iniciar a aplica\'e7\'e3o: 
+\f2\fs26 void main() \{\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	6	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \}\
+\ls2\ilvl0
+\f1\fs24 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	7	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	8	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Agora, criaremos um 
+\f0\b Hello World
+\f1\b0 : 
+\f2\fs26 void main() \{\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	9	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2   runApp(Text("Hello World!", textDirection: TextDirection.ltr));\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	10	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \}\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	11	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 \uc0\u8232 
+\f1\fs24 A fun\'e7\'e3o 
+\f2\fs26 runApp
+\f1\fs24  desenha os widgets na tela.\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 Estrutura Correta do C\'f3digo\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Embora o exemplo acima funcione, essa abordagem n\'e3o \'e9 produtiva. O ideal \'e9 separar o texto em uma classe que estenda um 
+\f0\b widget
+\f1\b0  adequado.\
+Crie a classe 
+\f2\fs26 MyApp
+\f1\fs24  estendendo 
+\f2\fs26 StatelessWidget
+\f1\fs24 :\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 class MyApp extends StatelessWidget \{\
+  @override\
+  Widget build(BuildContext context) \{\
+    return MaterialApp(\
+      home: Text('Hello World!'),\
+    );\
+  \}\
+\}\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 Agora, modifique o 
+\f2\fs26 main.dart
+\f1\fs24  para chamar 
+\f2\fs26 MyApp
+\f1\fs24 :\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 void main() \{\
+  runApp(MyApp());\
+\}\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 Trabalhando com Stateful Widgets\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 O 
+\f2\fs26 StatelessWidget
+\f1\fs24  funciona bem para conte\'fado est\'e1tico, mas para interfaces din\'e2micas utilizamos 
+\f2\fs26 StatefulWidget
+\f1\fs24 .\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 class MyApp extends StatefulWidget \{\
+  @override\
+  State<StatefulWidget> createState() \{\
+    return MyAppState();\
+  \}\
+\}\
+\
+class MyAppState extends State<MyApp> \{\
+  var resposta = 0;\
+\
+  void calcular() \{\
+    setState(() \{\
+      resposta = 80 * 2;\
+    \});\
+  \}\
+\
+  @override\
+  Widget build(BuildContext context) \{\
+    return MaterialApp(\
+      home: Scaffold(\
+        appBar: AppBar(title: Text('Primeira Aplica\'e7\'e3o')),\
+        body: Column(\
+          children: [\
+            Text('Informe seus dados'),\
+            ElevatedButton(child: Text('Calcular'), onPressed: calcular),\
+            Text('Resposta: ' + resposta.toString())\
+          ],\
+        ),\
+      ),\
+    );\
+  \}\
+\}\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 Criando um Formul\'e1rio para Capturar Dados\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Agora, vamos criar uma aplica\'e7\'e3o que captura 
+\f0\b peso
+\f1\b0  e 
+\f0\b altura
+\f1\b0  para calcular o IMC:\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 import 'package:flutter/material.dart';\
+\
+void main() \{\
+  runApp(MyApp());\
+\}\
+\
+class MyApp extends StatelessWidget \{\
+  @override\
+  Widget build(BuildContext context) \{\
+    return MaterialApp(\
+      title: 'Calculadora de IMC',\
+      home: HomePage(),\
+    );\
+  \}\
+\}\
+\
+class HomePage extends StatefulWidget \{\
+  @override\
+  _HomePageState createState() => _HomePageState();\
+\}\
+\
+class _HomePageState extends State<HomePage> \{\
+  final _tPeso = TextEditingController();\
+  final _tAltura = TextEditingController();\
+  var _infoText = "Informe seus dados!";\
+\
+  void _calcular() \{\
+    setState(() \{\
+      double peso = double.parse(_tPeso.text);\
+      double altura = double.parse(_tAltura.text) / 100;\
+      double imc = peso / (altura * altura);\
+      String imcStr = imc.toStringAsPrecision(4);\
+      if (imc < 17) \{\
+        _infoText = "Muito abaixo do peso ($imcStr)";\
+      \} else if (imc < 18.5) \{\
+        _infoText = "Abaixo do Peso ($imcStr)";\
+      \} else if (imc < 25) \{\
+        _infoText = "Peso Normal ($imcStr)";\
+      \} else if (imc < 30) \{\
+        _infoText = "Acima do Peso ($imcStr)";\
+      \} else if (imc < 35) \{\
+        _infoText = "Obesidade Grau I ($imcStr)";\
+      \} else if (imc < 40) \{\
+        _infoText = "Obesidade Grau II ($imcStr)";\
+      \} else \{\
+        _infoText = "Obesidade Grau III ($imcStr)";\
+      \}\
+    \});\
+  \}\
+\
+  @override\
+  Widget build(BuildContext context) \{\
+    return Scaffold(\
+      appBar: AppBar(title: Text("Calculadora de IMC"), centerTitle: true),\
+      body: Padding(\
+        padding: EdgeInsets.all(15.0),\
+        child: Column(\
+          children: <Widget>[\
+            _editText("Peso (kg)", _tPeso),\
+            _editText("Altura (cm)", _tAltura),\
+            ElevatedButton(onPressed: _calcular, child: Text("Calcular")),\
+            Text(\
+              _infoText,\
+              textAlign: TextAlign.center,\
+              style: TextStyle(color: Colors.blue, fontSize: 25.0),\
+            ),\
+          ],\
+        ),\
+      ),\
+    );\
+  \}\
+\
+  Widget _editText(String label, TextEditingController controller) \{\
+    return TextFormField(\
+      controller: controller,\
+      keyboardType: TextInputType.number,\
+      decoration: InputDecoration(labelText: label),\
+    );\
+  \}\
+\}\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 Conclus\'e3o\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Neste tutorial, abordamos os conceitos b\'e1sicos do Flutter, desde a cria\'e7\'e3o de um projeto at\'e9 a constru\'e7\'e3o de uma aplica\'e7\'e3o simples de c\'e1lculo de IMC. Exploramos 
+\f0\b StatelessWidgets
+\f1\b0 , 
+\f0\b StatefulWidgets
+\f1\b0 , entrada de dados com 
+\f2\fs26 TextFormField
+\f1\fs24 , e atualiza\'e7\'e3o de estado com 
+\f2\fs26 setState
+\f1\fs24 .\
+Agora que voc\'ea compreende esses conceitos, pode expandir sua aplica\'e7\'e3o com novas funcionalidades!\
+\pard\pardeftab720\partightenfactor0
+\cf3 \strokec3 \
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 \strokec2 Caso precise de mais ajustes ou melhorias no tutorial, estou \'e0 disposi\'e7\'e3o!\
+Preciso que os conte\'fados do tutoria sejam conservados como est\'e3o. A ajuda dever\'e1 ser somente na corre\'e7\'e3o ortogr\'e1fica.\'a0\
+}
