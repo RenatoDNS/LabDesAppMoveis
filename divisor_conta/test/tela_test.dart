@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:divisor_conta/screens/divisor_home_page.dart';
+import 'package:divisor_conta/main.dart';
 
 void main() {
   testWidgets('exibe o resultado após preencher e calcular', (tester) async {

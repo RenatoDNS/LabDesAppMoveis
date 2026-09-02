@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:divisor_conta/models/divisao_conta.dart';
+import 'package:divisor_conta/main.dart';
 
 void main() {
   group('DivisaoConta', () {
