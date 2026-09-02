@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Flutter (Firefox / web-server)",
+      "request": "launch",
+      "type": "dart",
+      "program": "${workspaceFolder}/lib/main.dart",
+      "cwd": "${workspaceFolder}",
+      "args": [
+        "-d",
+        "web-server",
+        "--web-port",
+        "8080",
+        "--web-hostname",
+        "localhost"
+      ]
+    },
+    {
+      "name": "Flutter (dispositivo padrao)",
+      "request": "launch",
+      "type": "dart",
+      "program": "${workspaceFolder}/lib/main.dart",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
