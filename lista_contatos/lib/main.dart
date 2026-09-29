@@ -54,7 +54,7 @@ const List<Contato> contatos = [
     urlFoto: 'https://randomuser.me/api/portraits/women/44.jpg',
   ),
   Contato(
-    nome: 'Bruno Oliveira',
+    nome: 'Vicenzo Oliveira',
     telefone: '(31) 99123-4567',
     urlFoto: 'https://randomuser.me/api/portraits/men/32.jpg',
   ),
@@ -64,12 +64,12 @@ const List<Contato> contatos = [
     urlFoto: 'https://randomuser.me/api/portraits/women/68.jpg',
   ),
   Contato(
-    nome: 'Diego Santos',
+    nome: 'Renato Santos',
     telefone: '(31) 99876-5432',
     urlFoto: 'https://randomuser.me/api/portraits/men/75.jpg',
   ),
   Contato(
-    nome: 'Elisa Ferreira',
+    nome: 'Silvana Ferreira',
     telefone: '(31) 98234-5678',
     urlFoto: 'https://randomuser.me/api/portraits/women/12.jpg',
   ),
